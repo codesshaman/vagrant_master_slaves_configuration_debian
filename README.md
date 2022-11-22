@@ -17,3 +17,7 @@ Vagrantfile for master and worker nodes cluster
 5. Initializate vagrant configuration:
 
 ``vagrant init -m bento/debian-11 debian``
+
+6. Run project:
+
+``vagrant up --provider=virtualbox``
