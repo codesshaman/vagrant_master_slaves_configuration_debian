@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 		inline: "echo \"#{id_rsa_pub}\" >> /home/vagrant/.ssh/authorized_keys"
 	end
   # master node 1
-	config.vm.define 'Master1' do |master|
+	config.vm.define 'Master1' do |master1|
 		master.vm.hostname = MASTER_NODE_HOSTNAME
 		master.vm.network :private_network, ip: '192.168.56.10'
 		master.vm.provider "virtualbox" do |v|
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
 		end
 	end
   # master node 2
-	config.vm.define 'Master2' do |master|
+	config.vm.define 'Master2' do |master2|
 		master.vm.hostname = MASTER_NODE_HOSTNAME
 		master.vm.network :private_network, ip: '192.168.56.20'
 		master.vm.provider "virtualbox" do |v|
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
 		end
 	end
   # master node 3
-	config.vm.define 'Master3' do |master|
+	config.vm.define 'Master3' do |master3|
 		master.vm.hostname = MASTER_NODE_HOSTNAME
 		master.vm.network :private_network, ip: '192.168.56.30'
 		master.vm.provider "virtualbox" do |v|
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 	end
 
   # worker node 1
-	config.vm.define 'Worker1' do |worker|
+	config.vm.define 'Worker1' do |worker1|
 		worker.vm.hostname = WORKER_NODE_HOSTNAME
 		worker.vm.network :private_network, ip: '192.168.56.110'
 		worker.vm.provider "virtualbox" do |v|
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
 		end
 	end
   # worker node 2
-	config.vm.define 'Worker2' do |worker|
+	config.vm.define 'Worker2' do |worker2|
 		worker.vm.hostname = WORKER_NODE_HOSTNAME
 		worker.vm.network :private_network, ip: '192.168.56.120'
 		worker.vm.provider "virtualbox" do |v|
@@ -58,7 +58,7 @@ Vagrant.configure("2") do |config|
 		end
 	end
   # worker node 3
-	config.vm.define 'Worker3' do |worker|
+	config.vm.define 'Worker3' do |worker3|
 		worker.vm.hostname = WORKER_NODE_HOSTNAME
 		worker.vm.network :private_network, ip: '192.168.56.130'
 		worker.vm.provider "virtualbox" do |v|
